@@ -40,31 +40,31 @@
 														&kp LCTRL &kp LALT &kp LWIN  &kp SPACE  			&kp RET   &mo LOWER  &mo RAISE  &trans
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
 		};
 
 		lower_layer {
 			/** LOWER
 			* ,-----------------------------------------.                    ,-----------------------------------------.
-			* |      |      |      |      |      |      |                    |      |      |      |   -  |   +  | DEL  |
+			* |      |      |      |      | HOM  |  END |                    |      |      |      |   -  |   =  | DEL  |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			* |      |      |   ↑  |      |      |      |                    |      |      |      |   [  |  ]   |  \   |
+			* |      |      |   ↑  |      | PG_UP| PG_DN|                    |      |      |      |   [  |  ]   |  \   |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
 			* |      |   ←  |   ↓  |   →  |      |      |-------.    ,-------|  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |
 			* |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
 			* |      | MUTE | VOL- | VOL+ | PAUS | PLY  |-------|    |-------|  F7  |  F8  |  F9  |  F10 | F11  | F12  |
 			* `-----------------------------------------/       /     \      \-----------------------------------------'
-			*                   |LOWER | LGUI | Alt  | /Space  /       \Enter \  |BackSP| RGUI |RAISE |
+			*                   |      |      |      | /       /       \      \  |      |      |      |
 			*                   |      |      |      |/       /         \      \ |      |      |      |
 			*                   `-------------------''-------'           '------''--------------------'
 			*/
 
 			bindings = <
-				&kp GRAVE 	&trans 		 	&trans 				&trans  	 		&trans   	&trans													&trans 		&trans    &trans    &kp MINUS 	&kp PLUS 	&kp DEL
-				&trans 			&trans 		 	&kp UP 				&trans  	 		&trans  	&trans 													&trans 		&trans    &trans    &kp LBKT 		&kp RBKT 	&kp BSLH
-				&trans 			&kp LEFT 	 	&kp DOWN 			&kp RIGHT  		&trans   	&trans													&kp F1 		&kp F2 		&kp F3 		&kp F4 			&kp F5 		&kp F6
-				&trans 			&kp K_MUTE 	&kp K_VOL_DN 	&kp K_VOL_UP 	&kp K_PP 	&kp F12   &trans 				&trans 	&kp F7 		&kp F8 		&kp F9 	  &kp F10 		&kp F11 	&kp F12
-																										&trans  &trans  	&trans 		&trans 				&trans 	&trans 		&trans    &trans
+				&kp GRAVE 	&trans 		 	&trans 							&trans  	 				&kp HOME 					&kp END													&trans 		&trans    &trans    &kp MINUS 	&kp EQUAL &kp DEL
+				&trans 			&trans 		 	&kp UP 							&trans  	 				&kp PAGE_UP 			&kp PAGE_DOWN 									&trans 		&trans    &trans    &kp LBKT 		&kp RBKT 	&kp BSLH
+				&trans 			&kp LEFT 	 	&kp DOWN 						&kp RIGHT  				&trans   					&trans													&kp F1 		&kp F2 		&kp F3 		&kp F4 			&kp F5 		&kp F6
+				&trans 			&kp K_MUTE 	&kp K_VOLUME_DOWN 	&kp K_VOLUME_UP 	&kp K_PLAY_PAUSE 	&kp F12   &trans 				&trans 	&kp F7 		&kp F8 		&kp F9 	  &kp F10 		&kp F11 	&kp F12
+																																			&trans  &trans  	&trans 		&trans 				&trans 	&trans 		&trans    &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -73,7 +73,7 @@
 		raise_layer {
 			/** RAISE
 			* ,-----------------------------------------.                    ,-----------------------------------------.
-			* | BTCLR|  BT0 |  BT1 |  BT2 |  BT3 | BT4  |                    |      |      |      |      |      |      |
+			* |  BT0 |  BT0 |  BT1 |  BT2 |  BT3 | BT4  |                    |      |      |      |      |      |BTCLR |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
 			* |  TOG |  ON |  OFF  |      |      |      |                    |      |      |      |      |      |      |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
