@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define LOWER   1
@@ -77,7 +78,7 @@
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
 			* |  TOG |  ON |  OFF  |      |      |      |                    |      |      |      |      |      |      |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			* |      |      |      |      |      |      |-------.    ,-------|      |      |      |      |      |      |
+			* |  USB | BLE  | U/B  |      |      |      |-------.    ,-------|      |      |      |      |      |      |
 			* |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
 			* |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
 			* `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -88,13 +89,12 @@
 			bindings = <
 				&bt BT_SEL 0 			&bt BT_SEL 1 				&bt BT_SEL 2 				&bt BT_SEL 3 		&bt BT_SEL 4 		&trans									 								&trans 	&trans 	&trans 	&trans 	&trans 	&bt BT_CLR
 				&ext_power EP_ON 	&ext_power EP_OFF 	&ext_power EP_TOG 	&trans 					&trans    			&trans 																	&trans 	&trans 	&trans 	&trans 	&trans 	&trans
-				&trans    				&trans 							&trans 							&trans    			&trans    			&trans                    							&trans 	&trans 	&trans 	&trans 	&trans 	&trans
+				&out OUT_USB 			&out OUT_BLE 				&out OUT_TOG 				&trans    			&trans    			&trans                    							&trans 	&trans 	&trans 	&trans 	&trans 	&trans
 				&trans    				&trans 							&trans 							&trans 					&trans 					&trans 		&trans 					&trans 	&trans 	&trans 	&trans 	&trans 	&trans 	&trans
 																																	&trans 					&trans 					&trans 		&trans   				&trans 	&trans 	&trans 	&trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
-
 	};
 };
