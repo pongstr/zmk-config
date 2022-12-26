@@ -1,6 +1,8 @@
 Lily58 ZMK
 ---
 
+![Lily58 + Nice!Nano + ZMK](https://i.imgur.com/9qvMoRf.jpg)
+
 Getting Started
 ---
 
