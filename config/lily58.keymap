@@ -25,9 +25,9 @@
 			 * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
 			 * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
 			 * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			 * | LCTRL|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+			 * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
 			 * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
-			 * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+			 * |GRAVE |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
 			 * `-----------------------------------------/       /     \      \-----------------------------------------'
 			 *                   | LCTRL| LALT | CMD  | /Space  /       \Enter \  | MO1  | MO2  |  MO3 |
 			 *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -37,7 +37,7 @@
 				&kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     				&kp N6 &kp N7   &kp N8    	&kp N9  &kp N0   &kp BSPC
 				&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      				&kp Y  &kp U    &kp I     	&kp O   &kp P    &kp BSLH
 				&kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      				&kp H  &kp J    &kp K     	&kp L   &kp SEMI &kp APOS
-				&kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   			&kp RBKT  &kp N  &kp M    &kp COMMA 	&kp DOT &kp FSLH &kp RSHFT
+				&kp GRAVE &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT   			&kp RBKT  &kp N  &kp M    &kp COMMA 	&kp DOT &kp FSLH &kp RSHFT
 														&kp LCTRL &kp LALT &kp LWIN  &kp SPACE  			&kp RET   &mo LOWER  &trans &mo RAISE
 			>;
 
