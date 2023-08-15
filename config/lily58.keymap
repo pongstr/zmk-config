@@ -74,11 +74,11 @@
 		raise_layer {
 			/** RAISE
 			* ,-----------------------------------------.                    ,-----------------------------------------.
-			* |      |  BT0 |  BT1 |  BT2 |  BT3 | BT4  |                    |      |      |      |      |      |BTCLR |
+			* |      |  BT0 |  BT1 |  BT2 |  BT3 | BT4  |                    |EP_ON |      |      |      |      |BTCLR |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			* |  TOG |  ON |  OFF  |      |      |      |                    |      |      |      |      |      |      |
+			* |  TOG |  ON |  OFF  |      |      |      |                    |EP_OFF|      |      |      |      |      |
 			* |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			* |  USB | BLE  | U/B  |      |      |      |-------.    ,-------|      |      |      |      |      |      |
+			* |  USB | BLE  | U/B  |      |      |      |-------.    ,-------|EP_TOG|      |      |      |      |      |
 			* |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
 			* |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
 			* `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -87,9 +87,9 @@
 			*                   `-------------------''-------'           '------''--------------------'
 			*/
 			bindings = <
-				&trans      			&bt BT_SEL 1 				&bt BT_SEL 2 				&bt BT_SEL 3 		&bt BT_SEL 4 		&trans									 								&trans 	&trans 	&trans 	&trans 	&trans 	&bt BT_CLR
-				&ext_power EP_ON 	&ext_power EP_OFF 	&ext_power EP_TOG 	&trans 					&trans    			&trans 																	&trans 	&trans 	&trans 	&trans 	&trans 	&trans
-				&out OUT_USB 			&out OUT_BLE 				&out OUT_TOG 				&trans    			&trans    			&trans                    							&trans 	&trans 	&trans 	&trans 	&trans 	&trans
+				&trans      			&bt BT_SEL 1 				&bt BT_SEL 2 				&bt BT_SEL 3 		&bt BT_SEL 4 		&trans									 								&ext_power EP_ON 	&trans 	&trans 	&trans 	&trans 	&bt BT_CLR
+				&ext_power EP_ON 	&ext_power EP_OFF 	&ext_power EP_TOG 	&trans 					&trans    			&trans 																	&ext_power EP_OFF 	&trans 	&trans 	&trans 	&trans 	&trans
+				&out OUT_USB 			&out OUT_BLE 				&out OUT_TOG 				&trans    			&trans    			&trans                    							&ext_power EP_TOG 	&trans 	&trans 	&trans 	&trans 	&trans
 				&trans    				&trans 							&trans 							&trans 					&trans 					&trans 		&trans 					&trans 	&trans 	&trans 	&trans 	&trans 	&trans 	&trans
 																																	&trans 					&trans 					&trans 		&trans   				&trans 	&trans 	&trans 	&trans
 			>;
