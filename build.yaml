@@ -29,14 +29,14 @@ include:
   - board: nice_nano_v2
     shield: lily58_right
 
-  ## reset firmware
-  - board: nice_nano_v2
-    shield: settings_reset
-
-  ## Corne Left
+  ## Corne Left (generic oled)
   - board: nice_nano_v2
     shield: corne_left 
 
-  ## Corne Right
+  ## Corne Right (generic oled)  
   - board: nice_nano_v2
     shield: corne_right 
+
+  ## reset firmware
+  - board: nice_nano_v2
+    shield: settings_reset

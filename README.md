@@ -1,10 +1,10 @@
-Lily58 Zmk 
+Lily58 Zmk
 ---
 
 ![Lily58 + Nice!Nano + ZMK](https://i.imgur.com/bTO1OVI.jpg)
 
 - nice!view
-- SSD1306 (128x32) OLED 
+- SSD1306 (128x32) OLED
 
 **References:**
 
@@ -25,8 +25,10 @@ Lily58 Zmk
 
 printed by [@mada.keeb](https://makerworld.com/en/@mada.keeb)
 
-Keymap
----
+<details>
+  <summary>
+    Lily58 Keymap
+  </summary>
 
 ### Layer 1
 
@@ -64,7 +66,6 @@ Function Keys
                    `-------------------''-------'           '------''--------------------'
 ```
 
-
 ### Layer 3
 
 ```
@@ -83,4 +84,12 @@ SETTINGS
                    `-------------------''-------'           '------''--------------------'
 ```
 
+</details>
+
 ![Lily58](https://i.imgur.com/V67WXNq.jpg)
+
+<details>
+  <summary>
+    Corne Keymap
+  </summary>
+</details>
