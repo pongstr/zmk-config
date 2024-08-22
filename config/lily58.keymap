@@ -12,125 +12,106 @@
 
 #define DEFAULT 0
 #define FN_KEYS 1
-#define MEDIA   2
-#define OPTIONS 3
+#define OPTIONS 2 
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-		default_layer {
-			/**
-       * QWERTY
-			 * ,-----------------------------------------.                    ,-----------------------------------------.
-			 * | ESC `|   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | BSPC |
-			 * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			 * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
-			 * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-			 * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
-			 * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
-			 * |GRAVE |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
-			 * `-----------------------------------------/       /     \      \-----------------------------------------'
-			 *                   | LCTRL| LALT | CMD  | /Space  /       \ Enter\  | MO1  | MO2  |  MO3 |
-			 *                   |      |      |      |/       /         \      \ |      |      |      |
-			 *                   `-------------------''-------'           '------''--------------------'
-			 **/
-    
-      display-name = "Base";
-			bindings = <
-				&kp ESC       &kp N1    &kp N2        &kp N3      &kp N4      &kp N5                                    &kp N6        &kp N7        &kp N8        &kp N9      &kp N0        &kp BSPC
-				&kp TAB       &kp Q     &kp W         &kp E       &kp R       &kp T                                     &kp Y         &kp U         &kp I         &kp O       &kp P         &kp BSLH
-				&kp LSHIFT    &kp A     &kp S         &kp D       &kp F       &kp G                                     &kp H         &kp J         &kp K         &kp L       &kp SEMI      &kp APOS
-				&kp GRAVE     &kp Z     &kp X         &kp C       &kp V       &kp B       &kp LBKT        &kp RBKT      &kp N         &kp M         &kp COMMA     &kp DOT     &kp FSLH      &kp RSHFT
-                                              &kp LCTRL   &kp LALT    &kp LWIN    &kp SPACE       &kp RET       &mo FN_KEYS   &mo MEDIA     &mo OPTIONS
-			>;
+        default_layer {
+          /**
+           * QWERTY
+           * ,-----------------------------------------.                    ,-----------------------------------------.
+           * | ESC `|   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | BSPC |
+           * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+           * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
+           * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+           * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
+           * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
+           * |GRAVE |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+           * `-----------------------------------------/       /     \      \-----------------------------------------'
+           *                   | LCTRL| LALT | CMD  | /Space  /       \ Enter\  | MO1  | MO2  |  MO2 |
+           *                   |      |      |      |/       /         \      \ |      |      |      |
+           *                   `-------------------''-------'           '------''--------------------'
+           **/            
+           display-name = "Base";
+           bindings = <
+              &kp ESC       &kp N1    &kp N2        &kp N3      &kp N4      &kp N5                                  &kp N6        &kp N7        &kp N8        &kp N9      &kp N0        &kp BSPC
+              &kp TAB       &kp Q     &kp W         &kp E       &kp R       &kp T                                   &kp Y         &kp U         &kp I         &kp O       &kp P         &kp BSLH
+              &kp LSHIFT    &kp A     &kp S         &kp D       &kp F       &kp G                                   &kp H         &kp J         &kp K         &kp L       &kp SEMI      &kp APOS
+              &kp GRAVE     &kp Z     &kp X         &kp C       &kp V       &kp B       &kp LBKT      &kp RBKT      &kp N         &kp M         &kp COMMA     &kp DOT     &kp FSLH      &kp RSHFT
+              &kp LCTRL     &kp LALT  &kp LWIN      &kp SPACE   &kp RET     &mo FN_KEYS &mo OPTIONS     &mo OPTIONS
+           >;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
-		};
+           sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
-		fn_layer {
-			/**
-       * Function Keys
-			 * ,-----------------------------------------.                    ,----------------------------------------.
-			 * |GRAVE |  F1  |  F2  |  F3  |  F4  |      |                    |  HOME |  END  |     |  -  |  =  |  DEL  |
-			 * |------+------+------+------+------+------|                    |-------+-------+-----+-----+-----+-------|
-			 * |      |  F5  |  F6  |  F7  |  F8  |      |                    | PG_UP | PG_DN |     |  [  |  ]  |   \   |
-			 * |------+------+------+------+------+------|                    |-------+-------+-----+-----+-----+-------|
-			 * |      |  F9  | F10  | F11  | F12  |      |-------.    ,-------|   ←   |   ↓   |  ↑  |  →  |  ;  |   '   |
-       * |------+------+------+------+------+------|       |    |       |-------+-------+-----+-----+-----+-------|
-			 * |CAPSLK| MUTE | VOL- | VOL+ |  ⏯   |      |-------|    |-------|       |       |  ,  |  .  |     |RShift |
-			 * `-----------------------------------------/       /     \      \-----------------------------------------'
-			 *                   | LCTRL | LALT | CMD | / Space /       \ ENTER\  |      |      |      |
-			 *                   |       |      |     |/       /         \      \ |      |      |      |
-			 *                   `-------------------''-------'           '------''--------------------'
-			 **/
-      display-name = "Fn Keys";
-			bindings = <
-				&kp GRAVE       &kp F1        &kp F2                &kp F3              &kp F4              &trans                                  &kp HOME        &kp END           &trans        &kp MINUS     &kp EQUAL     &kp DEL
-				&kp TAB         &kp F5        &kp F6                &kp F7              &kp F8              &trans                                  &kp PAGE_UP     &kp PAGE_DOWN     &trans        &kp LBKT      &kp RBKT      &kp BSLH
-				&kp LSHIFT      &kp F9        &kp F10               &kp F11             &kp F12             &trans                                  &kp LEFT        &kp DOWN          &kp UP        &kp RIGHT     &kp SEMI      &kp APOS
-				&kp CAPSLOCK    &kp K_MUTE    &kp K_VOLUME_DOWN     &kp K_VOLUME_UP     &kp K_PLAY_PAUSE    &trans      &trans            &trans    &trans          &trans            &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
-                                                            &kp LCTRL           &kp LALT            &kp LWIN    &kp SPACE         &kp RET   &trans          &trans            &trans
-			>;
+        lower_layer {
+            /**
+             * Function Keys
+             * ,-----------------------------------------.                    ,----------------------------------------.
+             * |GRAVE |  F1  |  F2  |  F3  |  F4  |      |                    |  HOME |  END  |     |  -  |  =  |  DEL  |
+             * |------+------+------+------+------+------|                    |-------+-------+-----+-----+-----+-------|
+             * |      |  F5  |  F6  |  F7  |  F8  |      |                    | PG_UP | PG_DN |     |  [  |  ]  |   \   |
+             * |------+------+------+------+------+------|                    |-------+-------+-----+-----+-----+-------|
+             * |      |  F9  | F10  | F11  | F12  |      |-------.    ,-------|   ←   |   ↓   |  ↑  |  →  |  ;  |   '   |
+             * |------+------+------+------+------+------|       |    |       |-------+-------+-----+-----+-----+-------|
+             * |CAPSLK| MUTE | VOL- | VOL+ |  ⏯   |      |-------|    |-------|       |       |  ,  |  .  |     |RShift |
+             * `-----------------------------------------/       /     \      \-----------------------------------------'
+             *                   | LCTRL | LALT | CMD | / Space /       \ ENTER\  |      |      |      |
+             *                   |       |      |     |/       /         \      \ |      |      |      |
+             *                   `-------------------''-------'           '------''--------------------'
+             **/
+            display-name = "Fn Keys";
+            bindings = <
+              &kp GRAVE       &kp F1        &kp F2                &kp F3              &kp F4              &trans                                  &kp HOME        &kp END           &trans        &kp MINUS     &kp EQUAL     &kp DEL
+              &kp TAB         &kp F5        &kp F6                &kp F7              &kp F8              &trans                                  &kp PAGE_UP     &kp PAGE_DOWN     &trans        &kp LBKT      &kp RBKT      &kp BSLH
+              &kp LSHIFT      &kp F9        &kp F10               &kp F11             &kp F12             &trans                                  &kp LEFT        &kp DOWN          &kp UP        &kp RIGHT     &kp SEMI      &kp APOS
+              &kp CAPSLOCK    &kp K_MUTE    &kp K_VOLUME_DOWN     &kp K_VOLUME_UP     &kp K_PLAY_PAUSE    &trans      &trans            &trans    &trans          &trans            &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
+                                                                  &kp LCTRL           &kp LALT            &kp LWIN    &kp SPACE         &kp RET   &trans          &trans            &trans
+            >;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
-		media_layer {
-			/**
-       * MEDIA
-			 * ,------------------------------------.                    ,---------------------------------------.
-			 * |      |     |     |     |     |     |                    |      |      |      |      |     |     |
-			 * |------+-----+-----+-----+-----+-----|                    |------+------+------+------+-----+-----|
-			 * |      |     |     |     |     |     |                    |      |      |      |      |     |     |
-			 * |------+-----+-----+-----+-----+-----|                    |------+------+------+------+-----+-----|
-			 * |      |     |     |     |     |     |-------.    ,-------|      |      |      |      |     |     |
-			 * |------+-----+-----+-----+-----+-----|       |    |       |------+------+------+------+-----+-----|
-			 * |      |     |     |     |     |     |-------|    |-------|      |      |      |      |     |     |
-			 * `------------------------------------/       /     \      \---------------------------------------'
-			 *                 |     |     |     | /       /       \      \  |      |      |      |
-			 *                 |     |     |     |/       /         \      \ |      |      |      |
-			 *                 `----------------''-------'           '------''--------------------'
-			 **/      
-      display-name = "Media";
-			bindings = <
-				&trans    &trans    &trans    &trans    &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
-				&trans    &trans    &trans    &trans    &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
-				&trans    &trans    &trans    &trans    &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
-				&trans    &trans    &trans    &trans    &trans    &trans    &trans        &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                      &trans    &trans    &trans    &trans        &trans    &trans    &trans    &trans
-			>;
+        raise_layer {
+          /**
+             * SETTINGS
+             * ,-------------------------------------.                    ,-----------------------------------------.
+             * |     | BT0 | BT1 | BT2 |      |      |                    |      |      |      |      |     | BTCLR |
+             * |-----+-----+-----+-----+------+------|                    |------+------+------+------+-----+-------|
+             * | U/B | USB | BLE |     |      |      |                    |      |      |      |      |     |       |
+             * |-----+-----+-----+-----+------+------|                    |------+------+------+------+-----+-------|
+             * |     |     |     |     |      |      |-------.    ,-------|      |      |      |      |     |       |
+             * |-----+-----+-----+-----+------+------|       |    |       |------+------+------+------+-----+-------|
+             * |     |     |     |     |      |      |-------|    |-------|      |      |      |      |     |       |
+             * `--------------------------------------/       /     \      \-----------------------------------------'
+             *                   |      |      |      | /       /       \      \  |      |      |      |
+             *                   |      |      |      |/       /         \      \ |      |      |      |
+             *                   `-------------------''-------'           '------''--------------------'
+             **/
+            display-name = "Settings";
+            bindings = <
+              &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &bt BT_CLR
+              &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &trans          &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
+              &trans          &trans          &trans          &trans          &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
+              &trans          &trans          &trans          &trans          &trans    &trans    &trans        &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                                                              &trans          &trans    &trans    &trans        &trans    &trans    &trans    &trans
+            >;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
+        extra_1 {
+            status = "reserved";
+        };
 
-		settings_layer {
-			/**
-       * SETTINGS
-			 * ,-------------------------------------.                    ,-----------------------------------------.
-			 * |     | BT0 | BT1 | BT2 |      |      |                    |      |      |      |      |     | BTCLR |
-			 * |-----+-----+-----+-----+------+------|                    |------+------+------+------+-----+-------|
-			 * | U/B | USB | BLE |     |      |      |                    |      |      |      |      |     |       |
-			 * |-----+-----+-----+-----+------+------|                    |------+------+------+------+-----+-------|
-			 * |     |     |     |     |      |      |-------.    ,-------|      |      |      |      |     |       |
-			 * |-----+-----+-----+-----+------+------|       |    |       |------+------+------+------+-----+-------|
-			 * |     |     |     |     |      |      |-------|    |-------|      |      |      |      |     |       |
-			 * `--------------------------------------/       /     \      \-----------------------------------------'
-			 *                   |      |      |      | /       /       \      \  |      |      |      |
-			 *                   |      |      |      |/       /         \      \ |      |      |      |
-			 *                   `-------------------''-------'           '------''--------------------'
-			 **/
-      display-name = "Settings";
-			bindings = <
-				&trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &bt BT_CLR
-				&out OUT_TOG    &out OUT_USB    &out OUT_BLE    &trans          &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
-				&trans          &trans          &trans          &trans          &trans    &trans                            &trans    &trans    &trans    &trans    &trans    &trans
-				&trans          &trans          &trans          &trans          &trans    &trans    &trans        &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                                        &trans          &trans    &trans    &trans        &trans    &trans    &trans    &trans
-			>;
+        extra_2 {
+            status = "reserved";
+        };
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-		};
-	};
+        extra_3 {
+            status = "reserved";
+        };
+    };
 };
