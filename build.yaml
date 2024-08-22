@@ -13,27 +13,25 @@
 #
 ---
 include:
-  ## lily58 left firmware (nice!view)
+  ## lily58 firmware (nice!view)
   - board: nice_nano_v2
     shield: lily58_left nice_view_adapter nice_view
 
-  ## lily58 right firmware (nive!view)
   - board: nice_nano_v2
     shield: lily58_right nice_view_adapter nice_view
 
-  ## lily58 left firmware (generic oled)
+  ## lily58 firmware (generic oled)
   - board: nice_nano_v2
     shield: lily58_left
 
-  ## lily58 right firmware (generic oled)
   - board: nice_nano_v2
     shield: lily58_right
 
-  ## Corne Left (generic oled)
+  ## Corne firmware (generic oled)
   - board: nice_nano_v2
     shield: corne_left 
+    snippet: studio-rpc-usb-uart
 
-  ## Corne Right (generic oled)  
   - board: nice_nano_v2
     shield: corne_right 
 
