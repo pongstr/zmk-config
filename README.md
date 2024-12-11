@@ -25,6 +25,10 @@ Lily58 Zmk
 
 printed by [@mada.keeb](https://makerworld.com/en/@mada.keeb)
 
+**new: ZMK Studio Support**
+
+<img width="1259" alt="Screenshot 2024-12-11 at 20 34 21" src="https://github.com/user-attachments/assets/555536fe-5d80-454b-ae46-c815b6ac2ac3" />
+
 <details>
   <summary>
     Lily58 Keymap
@@ -84,9 +88,8 @@ SETTINGS
                    `-------------------''-------'           '------''--------------------'
 ```
 
-</details>
-
 ![Lily58](https://i.imgur.com/V67WXNq.jpg)
+</details>
 
 <details>
   <summary>
